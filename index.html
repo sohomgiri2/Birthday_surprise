@@ -1,9 +1,9 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
     <title>Happy Birthday My Love - Elegant Dynamic Memory Diary</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -27,7 +27,7 @@
         body {
             font-family: 'Outfit', sans-serif;
             background: radial-gradient(circle, #fff0f3 0%, #ffcad4 100%);
-            overflow: hidden;
+            overflow-y: auto; /* Allows normal browser scrolling on portrait and landscape mobile */
             -webkit-tap-highlight-color: transparent;
         }
         .font-handwritten { font-family: 'Caveat', cursive; }
@@ -57,7 +57,7 @@
         /* High-fidelity CSS Keyframe Animations */
         @keyframes float-gentle {
             0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-6px) rotate(2deg); }
+            50% { transform: translateY(-8px) rotate(2deg); }
         }
         @keyframes float-reverse {
             0%, 100% { transform: translateY(0px) rotate(0deg); }
@@ -128,7 +128,7 @@
         }
     </style>
 </head>
-<body class="min-h-screen flex items-center justify-center p-2 sm:p-4 relative select-none">
+<body class="min-h-screen flex items-center justify-center p-2 sm:p-4 relative">
 
     <!-- 🌸 GLOBAL FALLING ROSE PETALS BACKGROUND LAYER -->
     <div id="global-rose-container" class="fixed inset-0 pointer-events-none z-10"></div>
@@ -148,7 +148,7 @@
     <audio id="audio-birthday-theme" loop></audio>
     <audio id="audio-favorite-song" loop></audio>
 
-    <!-- MAIN DIARY LANDSCAPE FRAME CARD (Height auto-constrained to prevent cut-offs on mobile landscape) -->
+    <!-- MAIN DIARY LANDSCAPE FRAME CARD -->
     <div id="main-diary-card" class="w-full max-w-3xl h-[88vh] max-h-[390px] sm:h-auto sm:aspect-[16/9] gingham-border rounded-[24px] bg-[#fdfbf7] relative overflow-hidden flex flex-col justify-between z-20">
         
         <!-- Notebook Binder Holes Ring Design -->
@@ -227,7 +227,7 @@
 
                 <div class="col-span-3 text-left space-y-1">
                     <h2 class="text-base sm:text-xl font-black text-rose-600 font-handwritten tracking-wide">HAPPY BIRTHDAY TO MY SOULMATE!</h2>
-                    <div class="text-[9px] sm:text-[11px] text-slate-600 leading-relaxed italic bg-white/70 p-2 sm:p-3 rounded-xl border border-pink-100 shadow-inner max-h-24 sm:max-h-32 overflow-y-auto font-medium">
+                    <div class="text-[9px] sm:text-[11px] text-slate-600 leading-relaxed italic bg-white/70 p-2 sm:p-3 rounded-xl border border-pink-100 shadow-inner max-h-24 sm:max-h-32 overflow-y-auto font-medium font-sans">
                         "Happy Birthday, my love! I wish you the very best for your future, filled with endless happiness, success, and peace. May all your dreams come true, and may you always have the strength and courage to keep moving forward no matter what."
                     </div>
                 </div>
@@ -255,7 +255,7 @@
                     </div>
                     <canvas id="scratch-canvas" width="256" height="112" class="absolute inset-0 z-20"></canvas>
                 </div>
-                <p class="text-[8px] text-slate-400 font-semibold italic text-center">Swipe across card to erase the glitter!</p>
+                <p class="text-[10px] text-slate-400 font-semibold italic text-center">Swipe across card to erase the glitter!</p>
             </div>
         </div>
 
@@ -300,7 +300,7 @@
             <div class="w-full max-w-2xl pl-12 pr-4 text-left space-y-1 sm:space-y-2 pb-6">
                 <h3 class="text-base sm:text-lg font-black text-rose-600 font-handwritten tracking-wide border-b border-pink-100 pb-0.5">✨ Our Beautiful Bonds & Promises</h3>
                 <div class="grid grid-cols-2 gap-1.5 sm:gap-3">
-                    <div class="bg-white/80 p-1.5 sm:p-2.5 rounded-lg border-l-4 border-rose-500 shadow-sm">
+                    <div class="bg-white/80 p-1.5 sm:p-2.5 rounded-lg border-l-4 border-rose-500 shadow-sm animate-pulse-soft">
                         <span class="font-bold text-[9px] sm:text-xs text-rose-600 block leading-tight">🔒 Safe Haven</span>
                         <p class="text-[8px] sm:text-[10px] text-slate-600 italic leading-none mt-0.5">You will always have my shoulder to lean on.</p>
                     </div>
@@ -308,7 +308,7 @@
                         <span class="font-bold text-[9px] sm:text-xs text-pink-600 block leading-tight">🌸 Forever Happy</span>
                         <p class="text-[8px] sm:text-[10px] text-slate-600 italic leading-none mt-0.5">I promise to wipe tears & bring your brightest smile.</p>
                     </div>
-                    <div class="bg-white/80 p-1.5 sm:p-2.5 rounded-lg border-l-4 border-purple-500 shadow-sm">
+                    <div class="bg-white/80 p-1.5 sm:p-2.5 rounded-lg border-l-4 border-purple-500 shadow-sm animate-pulse-soft">
                         <span class="font-bold text-[9px] sm:text-xs text-purple-600 block leading-tight">🧸 Little Tantrums</span>
                         <p class="text-[8px] sm:text-[10px] text-slate-600 italic leading-none mt-0.5">Your sweet tantrums are my favorite routine.</p>
                     </div>
@@ -330,14 +330,14 @@
 
             <div class="grid grid-cols-2 gap-3 sm:gap-6 w-full max-w-2xl pl-11 pr-4 pb-6">
                 <div class="bg-rose-50/80 p-2 sm:p-3 rounded-2xl border border-rose-100 shadow-md flex flex-col items-center space-y-1.5 relative">
-                    <div class="w-14 h-14 sm:w-20 sm:h-20 rounded-full bg-slate-900 border-2 border-white flex items-center justify-center relative shadow shadow-rose-100" id="vinyl-disk">
+                    <div class="w-14 h-14 sm:w-20 sm:h-20 rounded-full bg-slate-900 border-4 border-white flex items-center justify-center relative shadow shadow-rose-100" id="vinyl-disk">
                         <div class="w-5 h-5 rounded-full bg-rose-200 border border-white flex items-center justify-center">
                             <div class="w-1.5 h-1.5 rounded-full bg-slate-950"></div>
                         </div>
                     </div>
                     <div class="text-center leading-none">
-                        <h4 class="text-[9px] sm:text-xs font-extrabold text-slate-800">Favorite Romance Track</h4>
-                        <p class="text-[7px] sm:text-[9px] text-slate-400 font-semibold mt-0.5">I Like Me Better (Auto-Playing)</p>
+                        <h4 class="text-[9px] sm:text-xs font-extrabold text-slate-800 font-sans">Favorite Romance Track</h4>
+                        <p class="text-[7px] sm:text-[9px] text-slate-400 font-semibold mt-0.5 font-sans">I Like Me Better (Auto-Playing)</p>
                     </div>
                     <div class="flex items-center gap-2 w-full px-1">
                         <button onclick="toggleMusicPlayState()" id="music-play-toggle" class="px-2 py-0.5 bg-rose-500 text-white font-bold rounded text-[8px] sm:text-[9px] shadow leading-none">⏸️ Pause</button>
@@ -350,7 +350,7 @@
 
                 <div class="text-left bg-white/70 p-2 sm:p-3 rounded-xl border border-pink-100 shadow-inner max-h-24 sm:max-h-32 overflow-y-auto">
                     <h3 class="text-[10px] sm:text-xs font-bold text-rose-500 font-handwritten flex items-center gap-0.5">🎵 Our Rhythm</h3>
-                    <p class="text-[8px] sm:text-[10px] text-slate-600 leading-tight italic mt-0.5">
+                    <p class="text-[8px] sm:text-[10px] text-slate-600 leading-tight italic mt-0.5 font-sans">
                         "Whenever I hear our favorite song, I remember those sweet late-night drives, the countless hours we spent sharing silly jokes, and how you look so beautiful under the stars. I like me better when I'm with you."
                     </p>
                 </div>
@@ -361,7 +361,7 @@
         <div id="slide-8" class="slide-view hidden diary-paper h-full w-full flex flex-col justify-center items-center relative p-3 overflow-hidden">
             
             <!-- INTERACTIVE LOVE ENVELOPE (Pointers and Events fully isolated for clean touch action) -->
-            <div id="envelope-wrapper" class="relative w-64 h-36 sm:w-72 sm:h-44 flex flex-col items-center justify-center cursor-pointer z-40 p-2 border-4 border-dashed border-pink-300 rounded-2xl bg-pink-50/70 shadow-lg ml-6" style="pointer-events: auto !important;" onclick="openEnvelopeLetter()">
+            <div id="envelope-wrapper" class="relative w-64 h-36 sm:w-72 sm:h-44 flex flex-col items-center justify-center cursor-pointer z-40 p-2 border-4 border-dashed border-pink-400 rounded-3xl bg-pink-50/70 shadow-lg ml-6" style="pointer-events: auto !important;" onclick="openEnvelopeLetter()">
                 <div class="absolute inset-1.5 bg-pink-300 border-2 border-pink-400 rounded-xl shadow-2xl flex flex-col justify-end p-2 pointer-events-none">
                     <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-10 h-12 bg-rose-500 rounded-full flex items-center justify-center border-4 border-white shadow anim-heart">
                         <span class="text-sm">❤️</span>
@@ -375,7 +375,7 @@
             <!-- HIDDEN SPECIAL LOVE LETTER FRAME -->
             <div id="love-letter-display" class="hidden text-center space-y-2 max-w-2xl px-2 pl-12 pr-4 relative z-30 animate-fade-in w-full pb-8">
                 <span class="bg-rose-500 text-white text-[8px] tracking-[0.2em] font-extrabold px-3 py-1 rounded-full shadow-lg">LAST MESSAGE FOR YOU! 💌</span>
-                <div class="text-[9px] sm:text-[11px] text-slate-700 leading-normal font-semibold italic bg-rose-50/50 p-2 sm:p-3 rounded-xl border border-rose-200/50 max-h-24 sm:max-h-32 overflow-y-auto shadow-inner">
+                <div class="text-[9px] sm:text-[11px] text-slate-700 leading-normal font-semibold italic bg-rose-50/50 p-2 sm:p-3 rounded-xl border border-rose-200/50 max-h-24 sm:max-h-32 overflow-y-auto shadow-inner font-sans">
                     "My love! I hope your feelings for me never fade... not even a little. I just want to keep spending my days with you — through every high, every fight, and every quiet moment in between. Please don't ever get tired of me, even when I'm not at my best. You're my only home, the place where my heart always finds peace when I'm tired. I just want to come back to you. So please, stay with me a little longer... or maybe, forever."
                 </div>
                 <div class="flex justify-center items-center">
@@ -386,7 +386,7 @@
             </div>
         </div>
 
-        <!-- ==================== SLIDE 9: DEVELOPER SPECIAL WISH & CREDIT PAGE ==================== -->
+        <!-- ==================== SLIDE 9: DEVELOPER SPECIAL WISH & CREDIT PAGE (RESTORED & OPTIMIZED) ==================== -->
         <div id="slide-9" class="slide-view hidden diary-paper h-full w-full flex flex-col justify-center items-center relative p-3 text-center">
             <div class="w-full max-w-2xl pl-12 pr-4 space-y-1.5 sm:space-y-3 pb-8">
                 <div class="inline-flex items-center gap-1 bg-slate-900 text-yellow-300 font-extrabold text-[8px] tracking-widest uppercase px-3 py-1 rounded-full shadow border border-slate-800 animate-pulse">
@@ -398,17 +398,17 @@
                 </h2>
                 
                 <div class="bg-white/80 border border-pink-100 p-2.5 sm:p-4 rounded-xl shadow-md max-w-sm mx-auto space-y-1.5">
-                    <p class="text-[9px] sm:text-xs font-semibold text-slate-700 leading-relaxed italic">
+                    <p class="text-[9px] sm:text-xs font-semibold text-slate-700 leading-relaxed italic font-sans">
                         "Hey Madam! Many many happy returns of the day. May this grand 20th year bring boundless prosperity, sparkling smiles, and absolute bliss to your beautiful life!"
                     </p>
                     <div class="h-px bg-gradient-to-r from-transparent via-pink-200 to-transparent my-1"></div>
-                    <p class="text-[8px] sm:text-[10px] font-bold text-slate-500">
+                    <p class="text-[8px] sm:text-[10px] font-bold text-slate-500 font-sans">
                         Design Architect & Coder: <span class="text-rose-500">Sohom Giri</span>
                     </p>
                 </div>
 
                 <div class="flex justify-center items-center pt-0.5">
-                    <a id="render-insta-anchor" href="" target="_blank" class="px-4 py-1.5 bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400 text-white font-extrabold text-[9px] tracking-wider rounded-full shadow-md border border-white flex items-center gap-1 transform hover:scale-105 active:scale-95 transition">
+                    <a id="render-insta-anchor" href="" target="_blank" class="px-4 py-1.5 bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400 text-white font-extrabold text-[9px] tracking-wider rounded-full shadow-md border border-white flex items-center gap-1 transform hover:scale-105 active:scale-95 transition font-sans">
                         <span>📸 Follow Developer Instagram</span>
                     </a>
                 </div>
@@ -556,7 +556,6 @@
         function toggleMusicPlayState() {
             const toggleBtn = document.getElementById('music-play-toggle');
             if (isFavSongPlaying) {
-                // If user pauses the favorite song on Slide 7, automatically resume Peaceful BG music
                 stopFavoriteMusic();
                 toggleBtn.innerText = "▶️ Play";
                 playMusicTrack('peaceful');
@@ -596,6 +595,14 @@
                     playMusicTrack('peaceful');
                 }
 
+                // Explicitly initialize Scratch card on Slide 4
+                if (currentSlide === 4) {
+                    initScratchCard();
+                    startBubblesGame();
+                } else {
+                    stopBubblesGame();
+                }
+
                 if ([3, 4, 5, 7, 8, 9].includes(currentSlide)) triggerPremiumConfetti();
                 flash.style.opacity = '0';
             }, 150);
@@ -605,11 +612,16 @@
             confetti({ particleCount: 70, spread: 70, origin: { y: 0.65 }, colors: ['#ff0a54', '#ff477e', '#ff85a1', '#fbb1bd'] });
         }
 
-        // --- INTERACTIVE SCRATCH CARD ENGINE (TOUCH EVENTS PREVENTDEFAULT IMPLEMENTED) ---
+        // --- INTERACTIVE SCRATCH CARD ENGINE (TOUCH EVENTS OPTIMIZED) ---
         function initScratchCard() {
             const canvas = document.getElementById('scratch-canvas');
+            if (!canvas) return;
             const ctx = canvas.getContext('2d');
             
+            // Clear composites back to default
+            ctx.globalCompositeOperation = 'source-over';
+            
+            // Draw scratchable solid pink layer with custom text
             ctx.fillStyle = '#f472b6';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
             
@@ -632,21 +644,21 @@
             canvas.addEventListener('mouseup', () => { isDrawing = false; });
 
             canvas.addEventListener('touchstart', (e) => {
-                e.preventDefault(); // Prevents default Android/iOS swipe block
+                e.stopPropagation(); // Stops body scroll while scratching
                 isDrawing = true;
                 const rect = canvas.getBoundingClientRect();
                 const touch = e.touches[0];
                 scratch(touch.clientX - rect.left, touch.clientY - rect.top);
-            }, { passive: false });
+            });
             
             canvas.addEventListener('touchmove', (e) => {
-                e.preventDefault(); // Prevents scrolling while scratching
+                e.stopPropagation(); // Restores native up/down scrolling elsewhere except scratching path
                 if (isDrawing) {
                     const rect = canvas.getBoundingClientRect();
                     const touch = e.touches[0];
                     scratch(touch.clientX - rect.left, touch.clientY - rect.top);
                 }
-            }, { passive: false });
+            });
             
             canvas.addEventListener('touchend', () => { isDrawing = false; });
         }
@@ -773,12 +785,20 @@
                 const zone = document.getElementById('cake-assembly-zone');
                 zone.innerHTML = `
                     <div class="flex flex-col items-center justify-end relative pb-2" id="rich-layered-cake">
-                        <div class="w-36 h-2 bg-slate-300 rounded-full border-b-2 border-slate-400 z-10"></div>
-                        <div class="w-32 h-8 bg-amber-800 rounded-t-xl border-t-4 border-pink-400 z-20 shadow-md flex justify-around items-center px-2"><span class="text-[9px]">🍓</span><span class="text-[9px]">🍒</span><span class="text-[9px]">🍓</span></div>
-                        <div class="w-24 h-6 bg-pink-100 border-t-2 border-rose-300 z-30 shadow-inner flex justify-around items-center px-2"><span class="text-[8px]">💝</span><span class="text-[8px]">👑</span></div>
-                        <div class="w-2 h-6 bg-sky-400 z-40 absolute bottom-[38px] flex items-center justify-center">
-                            <div class="w-3 h-5 bg-amber-400 rounded-full absolute -top-4 anim-flicker" id="candle-flame"></div>
+                        <!-- Flame -->
+                        <div class="relative flex flex-col items-center">
+                            <div class="w-3 h-5 bg-amber-400 rounded-full anim-flicker absolute -top-4" id="candle-flame"></div>
+                            <!-- Candle Body -->
+                            <div class="w-2 h-6 bg-sky-400" id="candle-body"></div>
                         </div>
+                        <!-- Top Layer -->
+                        <div class="w-20 h-6 bg-rose-400 rounded-t-md shadow-inner flex items-center justify-center -mt-1 z-30"><span class="text-[9px]">🍒</span></div>
+                        <!-- Middle Layer -->
+                        <div class="w-28 h-8 bg-pink-100 rounded-t-lg border-t border-rose-300 shadow-inner flex justify-around items-center px-2 -mt-1 z-20"><span class="text-[8px]">💝</span><span class="text-[8px]">👑</span></div>
+                        <!-- Bottom Layer -->
+                        <div class="w-36 h-10 bg-amber-800 rounded-t-xl border-t-4 border-pink-400 shadow-md flex justify-around items-center px-2 -mt-1 z-10"><span class="text-xs">🍓</span><span class="text-xs">🍓</span></div>
+                        <!-- Platter Plate -->
+                        <div class="w-44 h-3 bg-slate-300 rounded-full border-b-2 border-slate-400 z-10"></div>
                     </div>
                     <canvas id="cake-slash-canvas" width="256" height="176" class="absolute inset-0 z-50"></canvas>
                 `;
@@ -790,7 +810,7 @@
             }
         }
 
-        // --- GESTURE SWIPE RECOGNITION FOR CAKE CUTTING (PREVENTDEFAULT Touch Protection) ---
+        // --- GESTURE SWIPE RECOGNITION FOR CAKE CUTTING ---
         let isCakeCutDone = false;
 
         function initCakeSlashGesture() {
@@ -831,22 +851,22 @@
             canvas.addEventListener('mouseup', () => { isDrawing = false; });
 
             canvas.addEventListener('touchstart', (e) => {
-                e.preventDefault(); // Prevents horizontal page transition gestures
+                e.stopPropagation(); // Restores native up/down scrolling
                 isDrawing = true;
                 swipePoints = [];
                 const rect = canvas.getBoundingClientRect();
                 const touch = e.touches[0];
                 drawSlashLine(touch.clientX - rect.left, touch.clientY - rect.top);
-            }, { passive: false });
+            });
             
             canvas.addEventListener('touchmove', (e) => {
-                e.preventDefault();
+                e.stopPropagation(); // Restores native up/down scrolling
                 if (isDrawing) {
                     const rect = canvas.getBoundingClientRect();
                     const touch = e.touches[0];
                     drawSlashLine(touch.clientX - rect.left, touch.clientY - rect.top);
                 }
-            }, { passive: false });
+            });
             
             canvas.addEventListener('touchend', () => { isDrawing = false; });
         }
@@ -867,6 +887,45 @@
             document.getElementById('cake-interactive-tip').classList.add('hidden');
             document.getElementById('cake-slash-canvas').classList.add('hidden');
             document.getElementById('party-next-btn').classList.remove('hidden');
+        }
+
+        // --- ENVELOPE OPEN LOGIC (SLIDE 8 - FIXED TOUCH LAYER DELEGATION) ---
+        function playChimeEffect() {
+            let chimeCtx = new (window.AudioContext || window.webkitAudioContext)();
+            try {
+                const notes = [523.25, 659.25, 783.99, 1046.50]; // C5, E5, G5, C6
+                notes.forEach((freq, index) => {
+                    const osc = chimeCtx.createOscillator();
+                    const gain = chimeCtx.createGain();
+                    osc.connect(gain);
+                    gain.connect(chimeCtx.destination);
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(freq, chimeCtx.currentTime + (index * 0.08));
+                    gain.gain.setValueAtTime(0.08, chimeCtx.currentTime + (index * 0.08));
+                    gain.gain.exponentialRampToValueAtTime(0.001, chimeCtx.currentTime + (index * 0.08) + 0.3);
+                    osc.start(chimeCtx.currentTime + (index * 0.08));
+                    osc.stop(chimeCtx.currentTime + (index * 0.08) + 0.3);
+                });
+            } catch(e) {
+                console.warn(e);
+            }
+        }
+
+        function openEnvelopeLetter() {
+            playChimeEffect();
+            const flap = document.getElementById('envelope-flap');
+            if (flap) {
+                flap.style.transform = 'scaleY(-1)';
+            }
+            setTimeout(() => {
+                const envelopeWrapper = document.getElementById('envelope-wrapper');
+                if (envelopeWrapper) envelopeWrapper.style.display = 'none';
+                
+                const letterDisplay = document.getElementById('love-letter-display');
+                if (letterDisplay) letterDisplay.classList.remove('hidden');
+                
+                triggerPremiumConfetti();
+            }, 450);
         }
     </script>
 </body>
